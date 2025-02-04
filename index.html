@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AllergySense: Urban Allergen Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <script id="googlemapsapi" async defer></script>
+</head>
+<body>
+    <script src="script.js"></script>
+   
+    <div class="container">
+        <h1><strong>PollenPulse</strong><br>
+        <span style="font-size: 0.7em; font-weight: normal;">Urban Allergen Explorer For Farmers/City Landscapers</span></h1>
+        <div class="search-container">
+            <input type="text" id="cityInput" placeholder="Enter your city or country...">
+            <button onclick="showMap()">Explore Pollen <i class="fas fa-search"></i></button>
+        </div>
+        <div id="map"></div>
+        <div class="pollen-legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #2ecc71;"></div>
+                <span class="legend-text">Low</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #f39c12;"></div>
+                <span class="legend-text">Medium</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #e74c3c;"></div>
+                <span class="legend-text">High</span>
+            </div>
+        </div>
+        <div class="pollen-types">
+            <div class="pollen-type" onclick="changePollenType('TREE_UPI')">
+                <div class="pollen-icon">
+                    <img src="https://www.iconpacks.net/icons/2/free-tree-icon-1578-thumb.png" alt="Tree Pollen" style="width: 50px; height: 50px;">
+                </div>
+                <div class="pollen-name">Tree Pollen</div>
+            </div>
+            <div class="pollen-type" onclick="changePollenType('GRASS_UPI')">
+                <div class="pollen-icon">
+                    <img src="https://www.iconpacks.net/icons/2/free-grass-icon-1582-thumb.png" alt="Grass Pollen" style="width: 50px; height: 50px;">
+                </div>
+                <div class="pollen-name">Grass Pollen</div>
+            </div>
+            <div class="pollen-type" onclick="changePollenType('WEED_UPI')">
+                <div class="pollen-icon">
+                    <img src="https://play-lh.googleusercontent.com/NTdL1lUqu6LdMTjglwsovaKVfOAdURNNPJT_aP4bQxoG99eGEeCM5i30VNEwuGiEaFc=w240-h480-rw" alt="Weed Pollen" style="width: 50px; height: 50px;">
+                </div>
+                <div class="pollen-name">Weed Pollen</div>
+            </div>
+        </div>
+    </div>
+    <div class="fake-chat-container">
+        <div class="fake-chat-header">
+            <h2>PulseAI</h2>
+        </div>
+        <div class="fake-chat-box" id="fakeChatBox"></div>
+        <div class="fake-input-container">
+            <input type="text" id="fakeUserInput" placeholder="Ask a question...">
+            <button onclick="getFakeAnswer()">Ask</button>
+        </div>
+    </div>
+</body>
+</html>
